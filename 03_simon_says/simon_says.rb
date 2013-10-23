@@ -25,8 +25,9 @@ end
 
 def titleize(word)
 	string=""
+	nos=["and", "the", "an", "over"]
 	word.split(" ").each_with_index do |wo,i|
-		i==0 || wo.size>4 || wo=="kwai" || wo=="i" || wo=="time" ? string << wo.capitalize : string << wo
+		i==0 || wo=="i"  || wo.size>=3 && !nos.include?(wo) ? string << wo.capitalize : string << wo
 		string << " " unless i==word.split(" ").size-1
 
 

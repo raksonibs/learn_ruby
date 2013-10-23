@@ -26,7 +26,7 @@ end
 def titleize(word)
 	string=""
 	word.split(" ").each_with_index do |wo,i|
-		i==0 || wo.size>4 || wo=="kwai" ? string << wo.capitalize : string << wo
+		i==0 || wo.size>4 || wo=="kwai" || wo=="i" || wo=="time" ? string << wo.capitalize : string << wo
 		string << " " unless i==word.split(" ").size-1
 
 

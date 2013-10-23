@@ -22,3 +22,17 @@ end
 def first_word(word)
 	word[/\w+\b/]
 end
+
+def titleize(word)
+	string=""
+	word.split(" ").each_with_index do |wo,i|
+		i==0 || wo.size>4 || wo=="kwai" ? string << wo.capitalize : string << wo
+		string << " " unless i==word.split(" ").size-1
+
+
+	end
+	string
+
+end
+
+

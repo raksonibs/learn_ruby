@@ -23,34 +23,45 @@ describe "#translate" do
     s.should == "errychay"
   end
 
-  # it "translates two words" do
-  #   s = translate("eat pie")
-  #   s.should == "eatay iepay"
-  # end
+  it "translates two words" do
+    s = translate("eat pie")
+    s.should == "eatay iepay"
+  end
 
-  # it "translates a word beginning with three consonants" do
-  #   translate("three").should == "eethray"
-  # end
+  it "translates a word beginning with three consonants" do
+    translate("three").should == "eethray"
+  end
 
-  # it "counts 'sch' as a single phoneme" do
-  #   s = translate("school")
-  #   s.should == "oolschay"
-  # end
+  it "counts 'sch' as a single phoneme" do
+    s = translate("school")
+    s.should == "oolschay"
+  end
 
-  # it "counts 'qu' as a single phoneme" do
-  #   s = translate("quiet")
-  #   s.should == "ietquay"
-  # end
+  it "counts 'qu' as a single phoneme" do
+    s = translate("quiet")
+    s.should == "ietquay"
+  end
 
-  # it "counts 'qu' as a consonant even when it's preceded by a consonant" do
-  #   s = translate("square")
-  #   s.should == "aresquay"
-  # end
+  it "counts 'qu' as a consonant even when it's preceded by a consonant" do
+    s = translate("square")
+    s.should == "aresquay"
+  end
 
-  # it "translates many words" do
-  #   s = translate("the quick brown fox")
-  #   s.should == "ethay ickquay ownbray oxfay"
-  # end
+  it "translates many words" do
+    s = translate("the quick brown fox")
+    s.should == "ethay ickquay ownbray oxfay"
+  end
+
+  it "keeps word capital and new capital letter in front" do
+    s=translate("Doggy boy")
+    s.should == "OggyDay oybay"
+  end
+
+  it "retains the punctuation of original phrase" do
+    s=translate("can't")
+    s.should == "an'tcay" #not sure if should be ant'cay, retaining the same position or some localization
+  end
+  
 
   # Extra challenges:
   # Write tests and get them to pass for:

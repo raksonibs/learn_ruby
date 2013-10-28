@@ -1,4 +1,5 @@
 require 'rspec'
+require 'bowling'
 
 describe Game do
   let (:game) { Game.new }
